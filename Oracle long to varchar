@@ -1,0 +1,7 @@
+oracle建议使用clob\blob\nclob来代替,如下:
+
+    create table mytest3(remark) as select to_lob(remark) from workflow_requestLog where rownum<10;
+    --可以这样创建，不过默认类型就成了clob
+
+然后,使用dbms_lob.substr取出clob中的字符:
+    select dbms_lob.substr(remark,4000,1) from mytest3;
