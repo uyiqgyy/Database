@@ -1,0 +1,13 @@
+锁是如何被设置的是由一个叫做事务隔离级别决定的。举例来说，如果事务隔离级别被设置为TRANSACTION_READ_COMMITTED，那么它就不会允许数据被访问，直到事务提交。换句话说，DBMS不允许读取脏数据的事件发生。
+
+TRANSACTION_NONE JDBC 驱动不支持事务
+TRANSACTION_READ_UNCOMMITTED 允许脏读，不可重复读和幻读。
+TRANSACTION_READ_COMMITTED 禁止脏读，但允许不可重复读和幻读。
+TRANSACTION_REPEATABLE_READ 禁止脏读和不可重复读，单运行幻读。
+TRANSACTION_SERIALIZABLE 禁止脏读，不可重复读和幻读。
+
+不可重复读的场景发生在事务A读取一行数据，事务B后续的改变了这一行，当事务A再次去读时，两次读取的事务就不一致了。
+
+幻读的场景是事务A读取到满足一定条件的一部分数据，事务B后续插入或者更新了一行数据，但是同样满足该条件，此时A再去读取发现多了一行数据。
+
+通常，你不需要对事务隔离级别做任何操作，只要使用默认的即可，但默认值取决于DBMS。例如，对于Java数据库，默认值是TRANSACTION_READ_COMMITTED。JDBC允许你获取和改变该级别，方法是getTransactionIsolation()和setTransactionIsolation()。
