@@ -57,4 +57,5 @@ from r1,r2,...,rn
 where Pi
 ```
 
+http://www.runoob.com/sql/sql-tutorial.html
 
