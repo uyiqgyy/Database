@@ -48,4 +48,13 @@ L-93|Dwntown|4000
 * Data-manipulation language - DML - query/insert/delete/modify rows in relation table
 * coulumn type - char, varchar, int, numeric, float...
 
-### 3. 
+### 3. Basic of SQL Query
+
+* Basic structure
+```sql
+**select** A1,A2,...,An
+**from** r1,r2,...,rn
+**where** Pi
+```
+
+
