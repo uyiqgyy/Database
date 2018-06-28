@@ -36,6 +36,7 @@ Adams|L-16
 Green|L-93
 
 **loan** relation
+
 loan_number|branch_name|amount
 --|--|--
 L-16|Brighton|900
