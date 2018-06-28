@@ -52,9 +52,9 @@ L-93|Dwntown|4000
 
 * Basic structure
 ```sql
-**select** A1,A2,...,An
-**from** r1,r2,...,rn
-**where** Pi
+select A1,A2,...,An
+from r1,r2,...,rn
+where Pi
 ```
 
 
